@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentador de personagem</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #personagem{
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+            position: absolute;
+            left: 650px;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+ <h1>Movimentador de personagem</h1>
+ <div id="personagem"></div>
+ <button onclick="mover('esquerda')">Esquerda</button>
+ <button onclick="mover('direita')">Direita</button>
+ <button onclick="mover('cima')">Cima</button>
+ <button onclick="mover('baixo')">Baixo</button> 
+ <script>
+    function mover(direcao){
+        let personagem=document.getElementById("personagem");
+        let posicaoAtualX=personagem.offsetLeft;
+        let posicaoAtualY=personagem.offsetTop;
+        if(direcao==="esquerda"){
+            personagem.style.left=posicaoAtualX-10+"px";
+        }
+        else if(direcao==="direita"){
+            personagem.style.left=posicaoAtualX+10+"px";
+        }
+        else if(direcao==="cima"){
+            personagem.style.top=posicaoAtualY-10+"px";
+        }
+        else if(direcao==="baixo"){
+            personagem.style.top=posicaoAtualY+10+"px";
+        }
+    }
+ </script>  
+</body>
+</html>
